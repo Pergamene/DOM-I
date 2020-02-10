@@ -103,7 +103,10 @@ newA.setAttribute('src', '#');
 newA.textContent = 'New A 2';
 nav.append(newA);
 
-anchors2 = Array.from(document.querySelectorAll('a'));
+const anchors2 = Array.from(document.querySelectorAll('a'));
 anchors2.forEach(anchor => {
   anchor.style.color = 'green';
 });
+
+// Stretch
+
