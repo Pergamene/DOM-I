@@ -1,6 +1,8 @@
 const startBtn = document.querySelector('#start');
 const resetBtn = document.querySelector('#reset');
 
+const digits = document.querySelectorAll('.digit');
+
 let intervalID;
 
 const secTens = document.querySelector('#secondTens');
@@ -34,6 +36,7 @@ function tick() {
         secOnes.textContent = 0;
         secTens.textContent = parseInt(secTens.textContent) + 1;
         window.clearInterval(intervalID);
+        makeItRed();
         startBtn.disabled = false;
       }
     }
@@ -47,4 +50,17 @@ function resetTimer() {
   msTens.textContent = 0;
   window.clearInterval(intervalID);
   startBtn.disabled = false;
+  makeItBlack();
+}
+
+function makeItBlack() {
+  digits.forEach(digit => {
+    digit.classList.remove('redDigit');
+  });
+}
+
+function makeItRed() {
+  digits.forEach(digit => {
+    digit.classList.add('redDigit');
+  });
 }
