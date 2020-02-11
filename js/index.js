@@ -109,4 +109,8 @@ anchors2.forEach(anchor => {
 });
 
 // Stretch
-
+btn.addEventListener('click', event => {
+  pTags.forEach(p => {
+    p.style.color = 'blue';
+  });
+});
